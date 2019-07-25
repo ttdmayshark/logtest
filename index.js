@@ -7,7 +7,7 @@ express()
   .set('views', path.join(__dirname, 'views'))
   .set('view engine', 'ejs')
   .get('/', (req, res) => {
-    console.info(`${req.method} ${req.originalUrl}`)
+    console.info(`${req.method} ${req.hostname}${req.originalUrl} from ${req.ip}`)
     return res.render('pages/index')
   })
   .listen(PORT, () => console.log(`Listening on ${ PORT }`))
